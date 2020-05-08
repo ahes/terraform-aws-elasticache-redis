@@ -99,3 +99,9 @@ variable "tags" {
   type        = map(string)
   description = "A mapping of tags to assign to all resources."
 }
+
+variable "prevent_destroy" {
+  default     = false
+  type        = bool
+  description = "Protect against destroying this resource"
+}

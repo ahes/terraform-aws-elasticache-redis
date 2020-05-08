@@ -90,6 +90,12 @@ resource "aws_elasticache_replication_group" "default" {
 
   # A mapping of tags to assign to the resource.
   tags = merge({ "Name" = var.name }, var.tags)
+
+  # Prevent destroy
+  lifecycle {
+    prevent_destroy = var.prevent_destroy
+  }
+
 }
 
 # https://www.terraform.io/docs/providers/aws/r/elasticache_parameter_group.html
